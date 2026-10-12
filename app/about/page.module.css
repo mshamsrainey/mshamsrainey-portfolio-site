@@ -1,0 +1,181 @@
+.page {
+	padding-block: clamp(3rem, 6vw, 6rem);
+	display: flex;
+	flex-direction: column;
+	gap: clamp(3rem, 6vw, 6rem);
+	> section {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+	> section + section {
+		border-block-start: 2px solid var(--color-ink);
+		padding-block-start: clamp(3rem, 6vw, 6rem);
+	}
+	* {
+		margin: 0;
+	}
+	:is(h1, h2, h3) {
+		line-height: 1.05;
+		letter-spacing: -0.025em;
+		text-wrap: balance;
+	}
+	h1 {
+		font-size: clamp(2rem, 4vw, 5rem);
+	}
+	h2 {
+		font-size: clamp(1.5rem, 3vw, 4.5rem);
+	}
+	h3 {
+		font-size: clamp(1.25rem, 2vw, 3.5rem);
+	}
+	p {
+		max-width: 75ch;
+	}
+}
+
+.multiParagraphText {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.aboutHero {
+	display: grid;
+	grid-template-columns:
+		minmax(0, 1.5fr)
+		minmax(0, 0.7fr);
+	gap: clamp(2rem, 6vw, 6rem);
+	align-items: start;
+	dl {
+		dt ~ dt {
+			padding-block-start: 2rem;
+			border-block-start: 1px solid var(--color-ink);
+		}
+		dd {
+			padding-block-end: 2rem;
+		}
+		dd:last-of-type {
+			padding-block-end: 0;
+		}
+	}
+}
+
+.approachGrid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: clamp(2rem, 4vw, 4rem);
+	> section {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+}
+
+.timelineSection {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	> div {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+	.timelineItem {
+		display: grid;
+		grid-template-columns:
+			minmax(0, 0.7fr)
+			minmax(0, 1.5fr);
+		gap: clamp(2rem, 6vw, 6rem);
+		align-items: start;
+		padding-block-end: 1.5rem;
+		border-block-end: 1px solid var(--color-ink);
+		> div {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
+		h3 {
+			font-size: clamp(1rem, 1.5vw, 2rem);
+		}
+		.timelineRole {
+			font-weight: 500;
+			font-size: clamp(0.875rem, 1.2vw, 1rem);
+		}
+	}
+	.timelineItem:last-of-type {
+		border-block-end: none;
+		padding-block-end: 0;
+	}
+}
+
+.contactLinks {
+	display: flex;
+	gap: 2rem;
+	justify-content: start;
+	align-items: center;
+	font-size: clamp(1rem, 1.2vw, 1.125rem);
+	font-weight: 500;
+	a {
+		text-decoration: none;
+		display: block;
+		position: relative;
+		padding: 0.2em 0;
+		overflow: hidden;
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 0.1em;
+			background-color: var(--color-olive);
+			transition: all 0.5s ease;
+			opacity: 1;
+			transform: translate3d(-100%, 0, 0);
+		}
+		&:hover::after,
+		&:focus-visible::after {
+			transform: translate3d(0, 0, 0);
+		}
+
+		&:first-of-type {
+			display: flex;
+			background-color: var(--color-olive);
+			padding: 0.5rem 1rem;
+			border-radius: 1rem;
+			color: var(--color-linen);
+			transition: all 0.5s ease;
+			&:hover {
+				transform: translateY(-0.25em);
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+@media (max-width: 48rem) {
+	.aboutHero {
+		grid-template-columns: 1fr;
+	}
+	.approachGrid {
+		grid-template-columns: 1fr;
+		section + section {
+			border-block-start: 1px solid var(--color-ink);
+			padding-block-start: 2rem;
+		}
+	}
+	.contactLinks {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+		align-items: start;
+	}
+	.timelineSection {
+		.timelineItem {
+			grid-template-columns: 4.5rem minmax(0, 1fr);
+			gap: 1rem;
+		}
+	}
+}
