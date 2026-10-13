@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import styles from "./page.module.css";
+import linkStyles from '@/src/styles/links.module.css';
 
 export const metadata: Metadata = {
 	title: "Selected Work",
@@ -21,10 +22,10 @@ export const WorkPage = () => {
 				</p>
 			</header>
 
-			<article className={styles.featured}>
+			<article className={styles.featured} aria-labelledby="talent">
 				<div className={styles.featuredOverview}>
 					<p className="eyebrow">01 / Featured Product</p>
-					<h2>Atlassian Talent</h2>
+					<h2 id="talent">Atlassian Talent</h2>
 				</div>
 				<div className={styles.featuredGrid}>
 					<div className={styles.featuredOverview}>
@@ -76,9 +77,9 @@ export const WorkPage = () => {
 					<h2>Systems + experiences</h2>
 				</div>
 				<div className={styles.secondaryStories}>
-					<section>
+					<section id="compensation-revamp" aria-labelledby="compensation-revamp-title">
 						<div className={styles.imageWrapperPlaceholder} />
-						<h3>New hire compensation experience revamp</h3>
+						<h3 id="compensation-revamp-title">New hire compensation experience revamp</h3>
 						<p>
 							Rebuilt a complex internal interface for recruiters and
 							compensation experts to assemble policy-compliant new hire offers
@@ -90,9 +91,9 @@ export const WorkPage = () => {
 							<li>Domain logic</li>
 						</ul>
 					</section>
-					<section>
+					<section aria-labelledby="ai-agent-sdlc">
 						<div className={styles.imageWrapperPlaceholder} />
-						<h3>AI agent software development lifecycle</h3>
+						<h3 id="ai-agent-sdlc">AI agent software development lifecycle</h3>
 						<p>
 							Independently designed and implemented a code-first development
 							prototype for AI agents, introducing automated validation, CI/CD,
@@ -113,13 +114,14 @@ export const WorkPage = () => {
 					<h2>Other ways of building</h2>
 				</div>
 				<div className={styles.openSourceProjects}>
-					<section>
+					<section aria-labelledby="description-audit">
 						<div className={styles.openSourceProjectHeader}>
-							<h3>Duke Libraries description audit</h3>
+							<h3 id="description-audit">Duke Libraries description audit</h3>
 							<a
 								href="https://github.com/duke-libraries/description-audit"
 								target="_blank"
-								rel="noopener noreferrer"
+                rel="noopener noreferrer"
+                className={linkStyles.underlineLink}
 							>
 								View repository ↗
 							</a>
@@ -130,13 +132,14 @@ export const WorkPage = () => {
 							universities nationwide.
 						</p>
 					</section>
-					<section>
+					<section aria-labelledby="gcode">
 						<div className={styles.openSourceProjectHeader}>
 							<h3>G-code painting visualizer</h3>
 							<a
 								href="https://github.com/mshamsrainey/gcode-painting-visualizer"
 								target="_blank"
 								rel="noopener noreferrer"
+								className={linkStyles.underlineLink}
 							>
 								View repository ↗
 							</a>

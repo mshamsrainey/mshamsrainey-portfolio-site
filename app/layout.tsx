@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { TopNav } from "@/src/components/TopNav";
+import linkStyles from '@/src/styles/links.module.css';
 
 import "./globals.css";
 import styles from "./layout.module.css";
@@ -39,7 +40,8 @@ export const RootLayout = ({ children }: LayoutProps<"/">) => {
 						<a
 							href="https://github.com/mshamsrainey"
 							target="_blank"
-							rel="noopener noreferrer"
+              rel="noopener noreferrer"
+              className={linkStyles.colorChangeLink}
 						>
 							GitHub
 						</a>
@@ -47,6 +49,7 @@ export const RootLayout = ({ children }: LayoutProps<"/">) => {
 							href="https://www.linkedin.com/in/mshamsrainey"
 							target="_blank"
 							rel="noopener noreferrer"
+							className={linkStyles.colorChangeLink}
 						>
 							LinkedIn
 						</a>

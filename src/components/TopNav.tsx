@@ -14,14 +14,14 @@ export const TopNav = () => {
 
 			<nav className={styles.navLinks} aria-label="Main navigation">
 				<Link
-					className={isOnWorkPage ? styles.active : undefined}
+					className={`${styles.navLink} ${isOnWorkPage ? styles.active : undefined}`}
 					aria-current={isOnWorkPage ? "page" : undefined}
 					href="/work"
 				>
 					Work
 				</Link>
 				<Link
-					className={isOnAboutPage ? styles.active : undefined}
+					className={`${styles.navLink} ${isOnAboutPage ? styles.active : undefined}`}
 					aria-current={isOnAboutPage ? "page" : undefined}
 					href="/about"
 				>

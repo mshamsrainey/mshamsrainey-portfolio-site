@@ -1,22 +1,71 @@
+.page {
+	padding-block: clamp(3rem, 6vw, 6rem);
+	display: flex;
+	flex-direction: column;
+	gap: clamp(3rem, 6vw, 6rem);
+	> section {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+	> section + section {
+		border-block-start: 2px solid var(--color-ink);
+		padding-block-start: clamp(3rem, 6vw, 6rem);
+	}
+	* {
+		margin: 0;
+	}
+	:is(h1, h2, h3) {
+		line-height: 1.05;
+		letter-spacing: -0.025em;
+		text-wrap: balance;
+	}
+	h1 {
+		font-size: clamp(3.25rem, 7vw, 7rem);
+	}
+	h2 {
+		font-size: clamp(1.75rem, 3.5vw, 4.5rem);
+	}
+	h3 {
+		font-size: clamp(1.25rem, 2vw, 3.5rem);
+	}
+	p {
+		max-width: 75ch;
+	}
+}
+
+.imageWrapperPlaceholder {
+	background-color: var(--color-olive);
+	border-radius: 0.5rem;
+	aspect-ratio: 16 / 9;
+	overflow: hidden;
+}
+
+.underlineLink {
+	composes: underlineLink from "@/src/styles/links.module.css";
+	font-weight: 500;
+	font-size: clamp(1rem, 1.2vw, 1.125rem);
+}
+
+.ctaButton {
+	composes: ctaButton from "@/src/styles/links.module.css";
+	font-weight: 500;
+	font-size: clamp(1rem, 1.2vw, 1.125rem);
+}
+
 .hero {
-	padding-block: clamp(3rem, 10vw, 4rem);
 	display: flex;
 	flex-direction: column;
 	gap: 0.75rem;
 	> * {
 		margin-block: 0;
 	}
+	h1 {
+		max-width: 13ch;
+	}
 }
 
-.heading {
-	max-width: 13ch;
-	font-size: clamp(3.25rem, 7vw, 7rem);
-	line-height: 1.05;
-	letter-spacing: -0.045em;
-	text-wrap: balance;
-}
-
-.intro {
+.largerBodyText {
 	max-width: 55ch;
 	font-size: clamp(1.125rem, 1.5vw, 1.375rem);
 	line-height: 1.6;
@@ -27,43 +76,95 @@
 	flex-direction: row;
 	gap: 1rem;
 	align-items: center;
-	margin-block-start: 1.5rem;
-	a {
-		text-decoration: none;
+}
+
+.selectedWorkIntro {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: start;
+}
+
+.workDescription {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.featuredProject {
+	display: grid;
+	grid-template-columns:
+		minmax(0, 1.2fr)
+		minmax(0, 0.8fr);
+	gap: clamp(1.5rem, 4vw, 3rem);
+	align-items: center;
+	h3 {
+		font-size: clamp(1.5rem, 3vw, 3rem);
 	}
-	:nth-child(1) {
-		background-color: var(--color-olive);
-		padding: 0.5rem 1rem;
-		border-radius: 1rem;
-		color: var(--color-linen);
-		transition: transform 0.5s ease;
-		&:hover,
-		&:focus {
-			transform: translateY(-0.25em);
-			text-decoration: none;
+}
+
+.secondaryProjects {
+	padding-block-start: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	section {
+		display: grid;
+		gap: clamp(1.5rem, 4vw, 3rem);
+		align-items: center;
+		grid-template-columns:
+			minmax(0, 1.3fr)
+			minmax(0, 0.7fr);
+		.imageWrapperPlaceholder {
+			order: 2;
 		}
 	}
-	:nth-child(2) {
-		text-decoration: none;
-		display: block;
-		position: relative;
-		padding: 0.2em 0;
-		overflow: hidden;
-		&::after {
-			content: "";
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 100%;
-			height: 0.1em;
-			background-color: var(--color-olive);
-			transition: transform 0.5s ease;
-			opacity: 1;
-			transform: translate3d(-100%, 0, 0);
+}
+
+.projectDescriptionHero {
+	font-weight: 500;
+	font-size: clamp(1rem, 1.2vw, 1.125rem);
+}
+
+#perspectiveHeader {
+	font-size: clamp(2.25rem, 6vw, 6rem);
+}
+
+.perspective {
+	> :last-child {
+		align-self: flex-end;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.75rem;
+		max-width: 65ch;
+		.perspectiveQuestions {
+			font-size: clamp(1rem, 1.2vw, 1.125rem);
+			font-style: italic;
 		}
-		&:hover::after,
-		&:focus-visible::after {
-			transform: translate3d(0, 0, 0);
+	}
+}
+
+@media (max-width: 48rem) {
+	.featuredProject {
+		grid-template-columns: 1fr;
+	}
+	.secondaryProjects {
+		border-block-start: 1px solid var(--color-ink);
+		section {
+			grid-template-columns: 1fr;
+			.imageWrapperPlaceholder {
+				order: 0;
+			}
 		}
+		section + section {
+			border-block-start: 1px solid var(--color-ink);
+			padding-block-start: 2rem;
+		}
+	}
+	.selectedWorkIntro {
+		flex-direction: column;
+		align-items: start;
+		gap: 0.75rem;
 	}
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import styles from "./page.module.css";
+import linkStyles from '@/src/styles/links.module.css'
 
 export const metadata: Metadata = {
 	title: "About Me",
@@ -174,11 +175,14 @@ export const AboutPage = () => {
 					opportunity? I'd be happy to connect.
 				</p>
 				<nav aria-label="Contact links" className={styles.contactLinks}>
-					<a href="mailto:mshamsrainey@gmail.com">Email Me</a>
+					<a href="mailto:mshamsrainey@gmail.com" className={linkStyles.ctaButton}>
+						Email Me
+					</a>
 					<a
 						href="https://www.linkedin.com/in/mshamsrainey"
 						target="_blank"
-						rel="noopener noreferrer"
+            rel="noopener noreferrer"
+            className={linkStyles.underlineLink}
 					>
 						LinkedIn
 					</a>
@@ -186,10 +190,11 @@ export const AboutPage = () => {
 						href="https://github.com/mshamsrainey"
 						target="_blank"
 						rel="noopener noreferrer"
+						className={linkStyles.underlineLink}
 					>
 						GitHub
 					</a>
-					<a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+					<a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={linkStyles.underlineLink}>
 						Resume
 					</a>
 				</nav>
