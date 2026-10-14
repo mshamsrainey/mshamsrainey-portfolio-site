@@ -1,7 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
 import styles from "./TopNav.module.css";
 
 export const TopNav = () => {
@@ -10,7 +12,14 @@ export const TopNav = () => {
 	const isOnAboutPage = pathname.startsWith("/about");
 	return (
 		<header className={styles.header}>
-			<Link href="/">Miriam Shams-Rainey</Link>
+			<Link href="/">
+				<Image
+					src="/wordmark.svg"
+					alt="Miriam Shams-Rainey"
+					width={300}
+					height={32}
+				/>
+			</Link>
 
 			<nav className={styles.navLinks} aria-label="Main navigation">
 				<Link
