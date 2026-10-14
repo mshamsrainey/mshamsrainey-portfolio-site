@@ -38,11 +38,13 @@ export const HomePage = () => {
 				</div>
 				<section aria-labelledby="talent" className={styles.featuredProject}>
 					<div className={styles.imageWrapperPlaceholder}>
-						<Image
-							fill={true}
-							src={talentGraphic}
-							alt="Atlassian Talent Graphic"
-						/>
+						<Link href="/work#talent">
+							<Image
+								fill={true}
+								src={talentGraphic}
+								alt="Atlassian Talent Graphic"
+							/>
+						</Link>
 					</div>
 					<div className={styles.workDescription}>
 						<Link className={linkStyles.underlineLink} href="/work#talent">
@@ -62,11 +64,13 @@ export const HomePage = () => {
 				<div className={styles.secondaryProjects}>
 					<section aria-labelledby="compensation-revamp">
 						<div className={styles.imageWrapperPlaceholder}>
-							<Image
-								fill={true}
-								src={compensationGraphic}
-								alt="New hire compensation experience revamp"
-							/>
+							<Link href="/work#compensation-revamp">
+								<Image
+									fill={true}
+									src={compensationGraphic}
+									alt="New hire compensation experience revamp"
+								/>
+							</Link>
 						</div>
 						<div className={styles.workDescription}>
 							<Link
@@ -90,11 +94,13 @@ export const HomePage = () => {
 					</section>
 					<section aria-labelledby="description-audit">
 						<div className={styles.imageWrapperPlaceholder}>
-							<Image
-								fill={true}
-								src={descriptionAuditGraphic}
-								alt="Description Audit Graphic"
-							/>
+							<Link href="/work#description-audit">
+								<Image
+									fill={true}
+									src={descriptionAuditGraphic}
+									alt="Description Audit Graphic"
+								/>
+							</Link>
 						</div>
 						<div className={styles.workDescription}>
 							<Link

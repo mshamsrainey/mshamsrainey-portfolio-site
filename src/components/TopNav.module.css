@@ -21,7 +21,7 @@
 .navLink {
 	composes: underlineLink from "@/src/styles/links.module.css";
 	&::after {
-		background-color: var(--color-plum);
+		background-color: var(--color-clay);
 	}
 	&.active::after {
 		transform: translate3d(0, 0, 0);
@@ -30,7 +30,7 @@
 	}
 	&.active:hover::after,
 	&.active:focus-visible::after {
-		background-color: var(--color-plum);
+		background-color: var(--color-clay);
 	}
 }
 
@@ -38,6 +38,11 @@
 	display: flex;
 	gap: 2rem;
 	justify-content: end;
+}
+
+.wordmark {
+	width: clamp(10rem, 15vw, 14rem);
+	height: auto;
 }
 
 @media (max-width: 48rem) {

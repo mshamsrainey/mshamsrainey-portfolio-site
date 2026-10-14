@@ -2,7 +2,7 @@
 	border: 2px solid var(--color-olive);
 	border-radius: 0.5rem;
 	aspect-ratio: 16 / 9;
-  position: relative;
+	position: relative;
 	overflow: hidden;
 }
 
@@ -139,17 +139,18 @@
 	.openSourceProjectHeader {
 		display: flex;
 		justify-content: space-between;
-    a {
-      font-weight: 500;
-    }
-	p {
-		max-width: 75ch;
-	}
-	h3 {
-		font-size: clamp(1.25rem, 2vw, 3.5rem);
-		line-height: 1.05;
-		letter-spacing: -0.025em;
-		text-wrap: balance;
+		a {
+			font-weight: 500;
+		}
+		p {
+			max-width: 75ch;
+		}
+		h3 {
+			font-size: clamp(1.25rem, 2vw, 3.5rem);
+			line-height: 1.05;
+			letter-spacing: -0.025em;
+			text-wrap: balance;
+		}
 	}
 }
 
@@ -158,7 +159,9 @@
 		grid-template-columns: 1fr;
 	}
 	.secondaryStories {
-		grid-template-columns: 1fr;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
 		section + section {
 			border-block-start: 1px solid var(--color-ink);
 			padding-block-start: 2rem;

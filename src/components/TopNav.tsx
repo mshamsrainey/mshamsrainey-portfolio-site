@@ -14,6 +14,7 @@ export const TopNav = () => {
 		<header className={styles.header}>
 			<Link href="/">
 				<Image
+                    className={styles.wordmark}
 					src="/wordmark.svg"
 					alt="Miriam Shams-Rainey"
 					width={300}

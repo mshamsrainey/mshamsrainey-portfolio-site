@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import linkStyles from "@/src/styles/links.module.css";
 import styles from "./page.module.css";
-import linkStyles from '@/src/styles/links.module.css'
 
 export const metadata: Metadata = {
 	title: "About Me",
@@ -149,7 +149,7 @@ export const AboutPage = () => {
 						<p className="eyebrow">2023</p>
 						<div>
 							<div>
-								<h3>Duke University</h3 >
+								<h3>Duke University</h3>
 								<p className={styles.timelineRole}>
 									B.S. Computer Science, Minors in Linguistics and Asian
 									American & Diaspora Studies
@@ -166,38 +166,49 @@ export const AboutPage = () => {
 				</div>
 			</section>
 			<section>
-				<div>
-					<p className="eyebrow">04 / Connect</p>
-					<h2>Let's chat</h2>
-				</div>
-				<p>
-					Interested in working together or discussing an engineering
-					opportunity? I'd be happy to connect.
-				</p>
-				<nav aria-label="Contact links" className={styles.contactLinks}>
-					<a href="mailto:mshamsrainey@gmail.com" className={linkStyles.ctaButton}>
-						Email Me
-					</a>
-					<a
-						href="https://www.linkedin.com/in/mshamsrainey"
-						target="_blank"
-            rel="noopener noreferrer"
-            className={linkStyles.underlineLink}
-					>
-						LinkedIn
-					</a>
-					<a
-						href="https://github.com/mshamsrainey"
+				<div className={styles.contactSection}>
+					<div>
+						<p className="eyebrow">04 / Connect</p>
+						<h2>Let's chat</h2>
+					</div>
+					<p>
+						Interested in working together or discussing an engineering
+						opportunity? I'd be happy to connect.
+					</p>
+					<nav aria-label="Contact links" className={styles.contactLinks}>
+						<a
+							href="mailto:mshamsrainey@gmail.com"
+							className={linkStyles.ctaButton}
+						>
+							Email Me
+						</a>
+						<a
+							href="https://www.linkedin.com/in/mshamsrainey"
+							target="_blank"
+							rel="noopener noreferrer"
+							className={linkStyles.underlineLink}
+						>
+							LinkedIn
+						</a>
+						<a
+							href="https://github.com/mshamsrainey"
+							target="_blank"
+							rel="noopener noreferrer"
+							className={linkStyles.underlineLink}
+						>
+							GitHub
+						</a>
+						{/* <a
+						href="/resume.pdf"
 						target="_blank"
 						rel="noopener noreferrer"
 						className={linkStyles.underlineLink}
+						hidden
 					>
-						GitHub
-					</a>
-					<a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={linkStyles.underlineLink}>
 						Resume
-					</a>
-				</nav>
+					</a> */}
+					</nav>
+				</div>
 			</section>
 		</article>
 	);
