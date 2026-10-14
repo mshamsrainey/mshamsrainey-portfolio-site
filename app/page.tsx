@@ -1,6 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
-import styles from "./home.module.css";
+
+import compensationGraphic from "@/public/comp_ux_hero.png";
+import descriptionAuditGraphic from "@/public/description_audit_hero.png";
+import talentGraphic from "@/public/talent_hero.png";
 import linkStyles from "@/src/styles/links.module.css";
+import styles from "./home.module.css";
 
 export const HomePage = () => {
 	return (
@@ -32,7 +37,13 @@ export const HomePage = () => {
 					</Link>
 				</div>
 				<section aria-labelledby="talent" className={styles.featuredProject}>
-					<div className={styles.imageWrapperPlaceholder} />
+					<div className={styles.imageWrapperPlaceholder}>
+						<Image
+							fill={true}
+							src={talentGraphic}
+							alt="Atlassian Talent Graphic"
+						/>
+					</div>
 					<div className={styles.workDescription}>
 						<Link className={linkStyles.underlineLink} href="/work#talent">
 							<h3 id="talent">Atlassian Talent</h3>
@@ -50,7 +61,13 @@ export const HomePage = () => {
 				</section>
 				<div className={styles.secondaryProjects}>
 					<section aria-labelledby="compensation-revamp">
-						<div className={styles.imageWrapperPlaceholder} />
+						<div className={styles.imageWrapperPlaceholder}>
+							<Image
+								fill={true}
+								src={compensationGraphic}
+								alt="New hire compensation experience revamp"
+							/>
+						</div>
 						<div className={styles.workDescription}>
 							<Link
 								className={linkStyles.underlineLink}
@@ -72,7 +89,13 @@ export const HomePage = () => {
 						</div>
 					</section>
 					<section aria-labelledby="description-audit">
-						<div className={styles.imageWrapperPlaceholder} />
+						<div className={styles.imageWrapperPlaceholder}>
+							<Image
+								fill={true}
+								src={descriptionAuditGraphic}
+								alt="Description Audit Graphic"
+							/>
+						</div>
 						<div className={styles.workDescription}>
 							<Link
 								className={linkStyles.underlineLink}

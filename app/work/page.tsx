@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import aiSdlcGraphic from "@/public/ai_sdlc.png";
+import compensationGraphic from "@/public/comp_ux_hero.png";
+import talentGraphic from "@/public/talent_hero.png";
+import linkStyles from "@/src/styles/links.module.css";
 import styles from "./page.module.css";
-import linkStyles from '@/src/styles/links.module.css';
 
 export const metadata: Metadata = {
 	title: "Selected Work",
@@ -29,7 +33,13 @@ export const WorkPage = () => {
 				</div>
 				<div className={styles.featuredGrid}>
 					<div className={styles.featuredOverview}>
-						<div className={styles.imageWrapperPlaceholder} />
+						<div className={styles.imageWrapperPlaceholder}>
+							<Image
+								fill={true}
+								src={talentGraphic}
+								alt="Atlassian Talent Graphic"
+							/>
+						</div>
 						<p>
 							Frontend architecture and product measurement for a zero-to-one
 							enterprise workforce-planning application.
@@ -77,9 +87,20 @@ export const WorkPage = () => {
 					<h2>Systems + experiences</h2>
 				</div>
 				<div className={styles.secondaryStories}>
-					<section id="compensation-revamp" aria-labelledby="compensation-revamp-title">
-						<div className={styles.imageWrapperPlaceholder} />
-						<h3 id="compensation-revamp-title">New hire compensation experience revamp</h3>
+					<section
+						id="compensation-revamp"
+						aria-labelledby="compensation-revamp-title"
+					>
+						<div className={styles.imageWrapperPlaceholder}>
+							<Image
+								fill={true}
+								src={compensationGraphic}
+								alt="New hire compensation experience revamp"
+							/>
+						</div>
+						<h3 id="compensation-revamp-title">
+							New hire compensation experience revamp
+						</h3>
 						<p>
 							Rebuilt a complex internal interface for recruiters and
 							compensation experts to assemble policy-compliant new hire offers
@@ -92,7 +113,13 @@ export const WorkPage = () => {
 						</ul>
 					</section>
 					<section aria-labelledby="ai-agent-sdlc">
-						<div className={styles.imageWrapperPlaceholder} />
+						<div className={styles.imageWrapperPlaceholder}>
+							<Image
+								fill={true}
+								src={aiSdlcGraphic}
+								alt="AI agent software development lifecycle"
+							/>
+						</div>
 						<h3 id="ai-agent-sdlc">AI agent software development lifecycle</h3>
 						<p>
 							Independently designed and implemented a code-first development
@@ -120,8 +147,8 @@ export const WorkPage = () => {
 							<a
 								href="https://github.com/duke-libraries/description-audit"
 								target="_blank"
-                rel="noopener noreferrer"
-                className={linkStyles.underlineLink}
+								rel="noopener noreferrer"
+								className={linkStyles.underlineLink}
 							>
 								View repository ↗
 							</a>

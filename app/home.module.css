@@ -35,7 +35,8 @@
 }
 
 .imageWrapperPlaceholder {
-	background-color: var(--color-olive);
+  position: relative;
+	border: 2px solid var(--color-olive);
 	border-radius: 0.5rem;
 	aspect-ratio: 16 / 9;
 	overflow: hidden;

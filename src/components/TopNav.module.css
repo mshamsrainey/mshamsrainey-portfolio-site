@@ -7,6 +7,7 @@
 	padding-block: 1rem;
 	padding-inline: var(--page-gutter);
 	position: sticky;
+	z-index: 10;
 	top: 0;
 	* {
 		text-decoration: none;
@@ -18,19 +19,19 @@
 }
 
 .navLink {
-    composes: underlineLink from '@/src/styles/links.module.css';
-		&::after {
-			background-color: var(--color-plum);
-		}
-		&.active::after {
-			transform: translate3d(0, 0, 0);
-			background-color: var(--color-linen);
-			transition: background-color 0.5s ease;
-		}
-		&.active:hover::after,
-		&.active:focus-visible::after {
-			background-color: var(--color-plum);
-		}
+	composes: underlineLink from "@/src/styles/links.module.css";
+	&::after {
+		background-color: var(--color-plum);
+	}
+	&.active::after {
+		transform: translate3d(0, 0, 0);
+		background-color: var(--color-linen);
+		transition: background-color 0.5s ease;
+	}
+	&.active:hover::after,
+	&.active:focus-visible::after {
+		background-color: var(--color-plum);
+	}
 }
 
 .navLinks {
