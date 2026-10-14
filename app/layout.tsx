@@ -1,7 +1,8 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 
 import { TopNav } from "@/src/components/TopNav";
-import linkStyles from '@/src/styles/links.module.css';
+import linkStyles from "@/src/styles/links.module.css";
 
 import "./globals.css";
 import styles from "./layout.module.css";
@@ -32,16 +33,16 @@ export const RootLayout = ({ children }: LayoutProps<"/">) => {
 					id="main-content"
 				>
 					{children}
+					<Analytics />
 				</main>
-
 				<footer className={`${styles.footer} ${styles.container}`}>
 					<p>Made with ♥︎ (and Next.js) by Miriam Shams-Rainey</p>
 					<div className={styles.navLinks}>
 						<a
 							href="https://github.com/mshamsrainey"
 							target="_blank"
-              rel="noopener noreferrer"
-              className={linkStyles.colorChangeLink}
+							rel="noopener noreferrer"
+							className={linkStyles.colorChangeLink}
 						>
 							GitHub
 						</a>
