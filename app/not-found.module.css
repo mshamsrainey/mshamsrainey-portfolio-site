@@ -1,0 +1,35 @@
+.page {
+	padding-block: clamp(3rem, 6vw, 6rem);
+	display: flex;
+	flex-direction: column;
+	gap: clamp(3rem, 6vw, 6rem);
+	* {
+		margin: 0;
+	}
+	:is(h1, h2, h3) {
+		line-height: 1.05;
+		letter-spacing: -0.025em;
+		text-wrap: balance;
+	}
+	h1 {
+		font-size: clamp(3.25rem, 7vw, 7rem);
+	}
+}
+
+.notFound {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.largerBodyText {
+	max-width: 55ch;
+	font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+	line-height: 1.6;
+}
+
+.ctaButton {
+	composes: ctaButton from "@/src/styles/links.module.css";
+	font-weight: 500;
+	font-size: clamp(1rem, 1.2vw, 1.125rem);
+}
